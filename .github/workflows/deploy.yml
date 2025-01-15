@@ -18,8 +18,9 @@ jobs:
                   node-version: 23
 
             - name: Test
-            - run: node -v
-            - run: npm -v
+              run: node -v
+
 
             - name: Execute contract-test
+              run: npm -v
 
