@@ -7,8 +7,6 @@ jobs:
         steps:
             - uses: actions/checkout@v4
 
-            - name: Build application
-
     tests:
         runs-on: ubuntu-latest
         steps:
