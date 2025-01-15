@@ -15,8 +15,12 @@ jobs:
               with:
                   node-version: 23
 
-            - name: Test node
-              run: node -v
+            - name: Checking version node-npm
+              run: |
+                node -v
+                npm -v
 
-            - name: Test npm
-              run: npm -v
+            - name: Install newman
+              run: |
+                npm install -g newman
+                newman -v
