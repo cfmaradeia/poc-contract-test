@@ -2,7 +2,7 @@ name: "Deploy development"
 
 on: [push]
 jobs:
-    build:
+    deploy:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v4
@@ -10,6 +10,8 @@ jobs:
     tests:
         runs-on: ubuntu-latest
         steps:
+            - uses: actions/checkout@v4
+
             - name: Setup Node
               uses: actions/setup-node@v4
               with:
@@ -24,3 +26,7 @@ jobs:
               run: |
                 npm install -g newman
                 newman -v
+
+            - name: DIR
+              run: |
+                ls
