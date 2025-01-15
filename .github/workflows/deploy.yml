@@ -17,10 +17,4 @@ jobs:
               with:
                   node-version: 23
 
-            - name: Test
-              run: node -v
-
-
-            - name: Execute contract-test
-              run: npm -v
 
