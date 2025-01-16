@@ -27,6 +27,6 @@ jobs:
                 npm install -g newman
                 newman -v
 
-            - name: DIR
+            - name: Execute test
               run: |
-                ls
+                newman run collections/poc-contract-test.postman_collection.json
