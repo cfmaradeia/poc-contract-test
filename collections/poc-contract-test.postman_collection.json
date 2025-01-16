@@ -1,0 +1,60 @@
+{
+	"info": {
+		"_postman_id": "a7abba76-26ec-4ff3-bc45-538a361dfa23",
+		"name": "poc-contract-test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "125437"
+	},
+	"item": [
+		{
+			"name": "dados de lancamento",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.not.include(\"Empty_Response\");",
+							"});",
+							"",
+							"pm.test(\"Validate field Values\", function () {",
+							"    var responseJSON = pm.response.json();",
+							"",
+							"    pm.expect(responseJSON.id).to.not.be.undefined;",
+							"    pm.expect(responseJSON.id).to.eq(\"62dd70d5202306255024d139\");",
+							"    pm.expect(responseJSON).to.have.property(\"date_utc\");",
+							"",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.spacexdata.com/v5/launches/latest",
+					"protocol": "https",
+					"host": [
+						"api",
+						"spacexdata",
+						"com"
+					],
+					"path": [
+						"v5",
+						"launches",
+						"latest"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
